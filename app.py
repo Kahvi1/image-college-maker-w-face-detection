@@ -101,12 +101,12 @@ def main():
         if cropped_faces:
             st.write("### Cropped Faces")
             for i, cropped_face in enumerate(cropped_faces):
-                st.image(cropped_face, caption=f"Face {i+1}", use_column_width=True)
+                st.image(cropped_face, caption=f"Face {i+1}", use_container_width=True)
 
             st.write("### Creating Collage...")
             collage = face_detector.create_collage(cropped_faces, collage_size=(600, 600))
             if collage is not None:
-                st.image(collage, caption="Collage", use_column_width=True)
+                st.image(collage, caption="Collage", use_container_width=True)
 
                 # Option to download collage
                 collage_image = Image.fromarray(collage)
